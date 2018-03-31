@@ -33,14 +33,12 @@ html {
         margin: 0 auto;
     }
     ol {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
         list-style-type: none;
         text-align: center;
-        position: relative;
-        top: 10%;
-        height: 50%;
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
     }
-    li {
-        padding: 35px;
-    }
+    li {}
 }
