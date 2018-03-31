@@ -33,12 +33,15 @@ html {
         margin: 0 auto;
     }
     ol {
-        font-size: 1.2rem;
+        font-size: 1.5rem;
         list-style-type: none;
         text-align: center;
         display: flex;
-        justify-content: space-around;
+        justify-content: center;
         flex-direction: column;
+        height: 100vh;
     }
-    li {}
+    li {
+        margin: 25px;
+    }
 }
