@@ -1,0 +1,46 @@
+body,
+html {
+    font-family: 'Raleway', sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+}
+
+.sidenav {
+    display: none
+}
+
+.container {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+@media only screen and (max-width: 480px) {
+    .sidenav {
+        background-color: rgba(192, 192, 192, 0.418);
+        left: -250px;
+        position: fixed;
+        display: block;
+        width: 250px;
+        height: 100vh;
+        transition: 0.9s ease all;
+    }
+    .open {
+        left: 0;
+    }
+    .container {
+        width: 90vw;
+        margin: 0 auto;
+    }
+    ol {
+        font-size: 2rem;
+        list-style-type: none;
+        text-align: center;
+        position: relative;
+        top: 10%;
+        height: 50%;
+    }
+    li {
+        padding: 35px;
+    }
+}
