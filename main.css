@@ -4,6 +4,7 @@ html {
     margin: 0;
     padding: 0;
     font-size: 16px;
+    scroll-behavior: smooth;
 }
 
 .sidenav {
@@ -16,8 +17,120 @@ html {
 }
 
 @media only screen and (max-width: 480px) {
+    .first {
+        height: 100vh;
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .first__box {
+        width: 80%;
+        height: 20vh;
+        display: flex;
+        justify-content: center;
+        align-items: left;
+        flex-direction: column;
+    }
+    .first__box--desc {
+        font-size: 20px;
+        font-weight: bolder;
+        text-align: center;
+        position: absolute;
+        width: 70%;
+        height: 20px;
+        top: calc(50% - 10px);
+        left: 15%;
+        opacity: 0;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+        animation-timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    }
+    .first__bottomArrow {
+        font-size: 3rem;
+        position: absolute;
+        bottom: 5vh;
+        left: cacl(50vw-3rem);
+        text-shadow: 2px 2px 1px rgba(58, 57, 57, 0.26);
+        opacity: 0;
+        animation-duration: 2.5s;
+        animation-iteration-count: infinite;
+        animation-timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+        text-decoration: none;
+        color: rgba(46, 46, 46, 0.836);
+    }
+    .first__bottomArrow>a {
+        text-decoration: none;
+    }
+    .arrowAnim {
+        animation-name: animArrow !important;
+    }
+    @keyframes animArrow {
+        0% {
+            opacity: 0;
+            transform: scale(1) translateY(0px);
+        }
+        55% {
+            opacity: 1;
+            transform: scale(1.3) translateY(15px)
+        }
+        100% {
+            opacity: 1;
+            transform: scale(1.3) translateY(15px)
+        }
+    }
+    .animationText {
+        animation-name: textShowUp;
+    }
+    @keyframes textShowUp {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+    .first__box--animationLine {
+        width: 50px;
+        height: 50px;
+        border-radius: 50px;
+        background: rgba(73, 155, 234, 0);
+        background: -moz-linear-gradient(left, rgba(73, 155, 234, 0) 0%, rgba(32, 124, 229, 1) 100%);
+        background: -webkit-gradient(left top, right top, color-stop(0%, rgba(73, 155, 234, 0)), color-stop(100%, rgba(32, 124, 229, 1)));
+        background: -webkit-linear-gradient(left, rgba(73, 155, 234, 0) 0%, rgba(32, 124, 229, 1) 100%);
+        background: -o-linear-gradient(left, rgba(73, 155, 234, 0) 0%, rgba(32, 124, 229, 1) 100%);
+        background: -ms-linear-gradient(left, rgba(73, 155, 234, 0) 0%, rgba(32, 124, 229, 1) 100%);
+        background: linear-gradient(to right, rgba(73, 155, 234, 0) 0%, rgba(32, 124, 229, 1) 100%);
+        filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#499bea', endColorstr='#207ce5', GradientType=1);
+        transition: 0.3s all ease-in;
+        animation-duration: 2.2s;
+        animation-direction: normal;
+        animation-iteration-count: infinite;
+        animation-fill-mode: forwards;
+        animation-timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+        opacity: 0;
+    }
+    .animation {
+        animation-name: swipe;
+    }
+    @keyframes swipe {
+        0% {
+            opacity: 0;
+            width: 50px
+        }
+        50% {
+            opacity: 1;
+            width: 350px
+        }
+        100% {
+            opacity: 1;
+            width: 350px
+        }
+    }
     .sidenav {
-        background-color: rgba(192, 192, 192, 0.418);
+        background-color: rgba(0, 0, 0, 0.418);
         left: -250px;
         position: fixed;
         display: block;
@@ -29,7 +142,7 @@ html {
         left: 0;
     }
     .container {
-        width: 90vw;
+        width: 96vw;
         margin: 0 auto;
     }
     ol {
@@ -44,4 +157,131 @@ html {
     li {
         margin: 25px;
     }
+}
+
+
+/* Second view */
+
+.second {
+    height: 97.5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-right: 1px solid rgba(145, 142, 142, 0.63);
+    border-top: 1px solid rgba(145, 142, 142, 0.63);
+    bottom: 1vh;
+    position: relative;
+}
+
+.second::after {
+    content: "";
+    width: 94%;
+    height: 96%;
+    position: absolute;
+    border-left: 1px solid rgba(145, 142, 142, 0.63);
+    border-bottom: 1px solid rgba(145, 142, 142, 0.63);
+}
+
+.second__image {
+    border-bottom: 1px solid rgba(145, 142, 142, 0.63);
+    border-left: 1px solid rgba(145, 142, 142, 0.63);
+    width: 150px;
+    height: 150px;
+    transform: rotate(45deg);
+    margin-bottom: 150px;
+}
+
+img {
+    max-width: 90%;
+    max-height: 90%;
+    transform: rotate(-45deg)
+}
+
+.second__image::after {
+    content: "";
+    position: absolute;
+    border-top: 1px solid rgba(145, 142, 142, 0.63);
+    border-right: 1px solid rgba(145, 142, 142, 0.63);
+    width: 135px;
+    height: 135px;
+    top: 5px;
+    right: 5px;
+}
+
+.third {
+    top: -.5vh;
+    height: 97.5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-right: 1px solid rgba(145, 142, 142, 0.63);
+    border-top: 1px solid rgba(145, 142, 142, 0.63);
+    position: relative;
+}
+
+.third__app {
+    border-left: 1px solid rgba(145, 142, 142, 0.63);
+    width: 90%;
+    height: calc(100% / 6);
+    margin: 7px;
+}
+
+.third__app {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+}
+
+.third__app__img1 {
+    width: 30%;
+    height: 95%;
+    background: url("./images/target.png");
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.third__app__img2 {
+    width: 30%;
+    height: 95%;
+    background: url("./images/cloud.png");
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.third__app__img3 {
+    width: 30%;
+    height: 95%;
+    background: url("./images/calendar.png");
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.third__app__img4 {
+    width: 30%;
+    height: 95%;
+    background: url("./images/text-tool.png");
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.third__app__img5 {
+    width: 30%;
+    height: 95%;
+    background: url("./images/play-button.png");
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.third_app__desc {
+    font-size: 14px;
+    width: 60%;
+    height: 50%;
 }
